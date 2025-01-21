@@ -1,6 +1,15 @@
 // Collaborator: Seth Mackovjak
 // Collaborator: Robin Yi
 
+/*
+ * The builtins module manages the pseudo-redirection required to use
+ * built-in commands whenever they are called so that they can run in
+ * the current shell execution environment rather than in their own
+ * child processes. Similarly, the expand module also utilizes built-in
+ * commands, but the commands used in expand have to do with expansion
+ * methods used on text in the shell, and do not require pseudo-redirection.
+ */
+
 #define _POSIX_C_SOURCE 200809L
 #include <errno.h>
 #include <limits.h>
