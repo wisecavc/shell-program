@@ -4,8 +4,7 @@
  * SIGHUP signal to every active job by using the jobs_cleanup() function
  * so that the job list and objects are freed. Also runs vars_cleanup()
  * from the vars module for the same purpose, and terminates the active
- * shell with a call to exit().  This achieves the project specification
- * of applying the built-in shell utility exit.
+ * shell with a call to exit().
  */
 
 /* XXX DO NOT MODIFY THIS FILE XXX */
