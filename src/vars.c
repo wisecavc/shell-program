@@ -1,3 +1,13 @@
+/*
+ * The vars module provides the shell with methods for managing shell variables.
+ * Functionalities of the vars module include the ability to set, get, unset,
+ * and export the values of variables as well as the ability to check if a variable
+ * name is a valid XBD name. The main use of the vars function in other modules is
+ * to get and set variables, specifically in the modules builtins, expand, and parser.
+ * The vars module is also utilized in the exit process in order to clean up and free
+ * any existing variables before the shell is terminated.
+ */
+
 // Collaborator: Seth Mackovjak
 // Collaborator: Robin Yi
 
