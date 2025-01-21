@@ -9,7 +9,20 @@
  * The builtin module is used to reference the list of built-in commands to determine
  * whether the current command being run is built-in or not, which (combined with
  * whether or not it’s a background task) determines whether or not the command
- * is processed by creating a fork. 
+ * is processed by creating a fork.
+ * 
+ * In the runner module, commands that use built-in functions rely on virtual
+ * redirection methods provided by the builtin module to redirect and subsequently
+ * restore the shell’s standard input and output streams, allowing the built-in
+ * function to run in the shell’s execution environment without permanently overwriting
+ * the shell’s stdin/stdout streams. Meanwhile, if the command being processed is an
+ * external command, the function ensures that the standard stream overrides are set to -1,
+ * I/O redirects and variable assignments are processed, and the signal operator is
+ * used to restore signals to their original values when bigshell was invoked. The
+ * function uses execvp() to execute the external command passed as the PATH environment
+ * variable. After the child process is done executing, the parent process in the runner
+ * module closes any unneeded pipelines and cleans up accordingly based on whether the
+ * command was a background or if it used pipelines.
  */
 
 // Collaborator: Seth Mackovjak
