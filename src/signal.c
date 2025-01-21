@@ -1,3 +1,14 @@
+/*
+ * The signal module is designed to integrate signal-handling behaviors, both in
+ * the shell and commands. It is used in the bigshell module to initialize
+ * signals before the main loop starts, and to enable and subsequently disable
+ * signal interrupt via SIGINT while a new command list is being parsed after a
+ * command is received. The signal module is also used in the runner module when
+ * it is handling external processes in order to restore any signals that were
+ * changed by the shell that the created child process needs to be set to their
+ * default values before execution.
+ */
+
 // Collaborator: Seth Mackovjak
 // Collaborator: Robin Yi
 
