@@ -1,3 +1,11 @@
+/*
+ * The jobs module maintains a list of jobs and handles adding, removing, and
+ * updating the status of jobs on that list as it is called by the runner module
+ * (for adding jobs) and the wait module (for removing or updating the status of jobs).
+ * It is also responsible for preparing the job list and its entries to be freed when
+ * the function in the exit module is called.
+ */
+
 /* XXX DO NOT MODIFY THIS FILE XXX */
 #include <stdlib.h>
 #include <string.h>
