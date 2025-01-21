@@ -1,3 +1,18 @@
+/*
+ * The bigshell module is responsible for identifying the status of
+ * background jobs every time a new command is run, it does this by
+ * relying on the wait_on_bg_jobs() function provided by the wait module.
+ * If no background jobs have changed states, then the loop constituting
+ * the shell can continue processing the new command without waiting.
+ * 
+ * Next, the command list is parsed using the command_list_parse() function
+ * provided in the parser module. Commands to be run are passed to the function
+ * run_command_list, defined in the runner module, and afterwards the parsed
+ * command list is freed via a call to the command_list_free() function in the
+ * parser module. The function bigshell_exit() from the exit module is called
+ * when the end of input is reached.
+ */
+
 /* XXX DO NOT MODIFY THIS FILE XXX */
 #define _POSIX_C_SOURCE 200809
 #include <err.h>
