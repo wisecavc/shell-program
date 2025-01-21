@@ -1,3 +1,14 @@
+/*
+ * The parser module is responsible for parsing input passed into the
+ * shell and translating it into a command list. The command list itself
+ * is represented in a struct containing nested structs representing individual
+ * commands and their corresponding characteristics, such as the name of the command,
+ * the assignment name and value, the I/O redirection operators, etc.
+ * The parser module returns a pointer to a string describing an error,
+ * should any be encountered during parsing. The parser module is predominantly used
+ * in the bigshell module as new commands passed in the shell are in need of parsing.
+ */
+
 /* XXX DO NOT MODIFY THIS FILE XXX */
 #define _POSIX_C_SOURCE 200809L
 #include <assert.h>
