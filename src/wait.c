@@ -1,3 +1,16 @@
+/*
+ * The wait module involves the direction of process groups and
+ * jobs to the foreground, where the main process waits for them
+ * to be completed before being allowed to proceed. Functions
+ * found in wait that relate to directing process groups and jobs
+ * to the foreground are utilized in the runner and builtins modules,
+ * respectively. Furthermore, the wait module has a function that
+ * examines jobs running in the background, and checks if any have
+ * changed states or not every time a new command is passed to the
+ * shell. This function involving backgrounds exists in the main
+ * loop in the bigshell module.
+ */
+
 // Collaborator: Seth Mackovjak
 // Collaborator: Robin Yi
 
